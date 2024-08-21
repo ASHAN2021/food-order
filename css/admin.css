@@ -50,12 +50,66 @@
 
 }
 
+.tbl-full{
+    width: 100%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: #1e90ff;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    text-decoration: none;
+}
+
+.btn-primary:hover{
+    background-color: #3742fa;
+}
+
+.btn-secondary{
+    background-color: #7bed9f;
+    color: black;
+    font-weight: bold;
+    padding: 1%;
+    text-decoration: none;
+}
+
+.btn-secondary:hover{
+    background-color: #2ed573;
+}
+
+.btn-danger{
+    background-color: #ff6b81;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    text-decoration: none;
+}
+
+.btn-danger:hover{
+    background-color: #ff4757;
+}
+
 .col-4{
     width: 18%;
     background-color: white;
     margin: 1%;
     padding: 2%;
     float: left;
+}
+
+.tbl-30{
+    width: 30%;
 }
 
 /* CSS for footer*/
