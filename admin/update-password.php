@@ -18,19 +18,19 @@
                 <tr>
                     <td>Current Password:</td>
                     <td>
-                        <input type="password" name="current_passowrd" placeholder="Current Password"/>
+                        <input type="password" name="current_password" placeholder="Current Password"/>
                     </td>
                 </tr>
                 <tr>
                     <td>New Password:</td>
                     <td>
-                        <input type="password" name="new_passowrd" placeholder="New Password"/>
+                        <input type="password" name="new_password" placeholder="New Password"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm Password:</td>
                     <td>
-                        <input type="password" name="confirm_passowrd" placeholder="Confirm Password"/>
+                        <input type="password" name="confirm_password" placeholder="Confirm Password"/>
                     </td>
                 </tr>
                 <tr>
@@ -49,13 +49,13 @@
 
 <?php
 
-            if(isset($_POST['submit'])){
+            if(isset($_POST['change_password'])){
                 $id = $_POST['id'];
-                $currentPassword = $_POST['current_password'];
-                $newPassword = $_POST['new_password'];
-                $confirmPassword = $_POST['confirm_passowrd'];
+                $currentPassword =md5($_POST['current_password']) ;
+                $newPassword = md5($_POST['new_password']);
+                $confirmPassword =md5($_POST['confirm_password']) ;
 
-                $sql = "SELECT * FROM tbl_admin WHERE id='$id' AND password='$currentPassword'";
+                $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password='$currentPassword'";
 
                 $res = mysqli_query($conn, $sql);
 
@@ -82,6 +82,7 @@
                                 $_SESSION['pwd-not-match'] = "<div class='error'>Password Did Not Match</div>";
                                 header('location:'.SITEURL.'admin/manage-admin.php');
                         }
+                        
                     }else{
                         $_SESSION['user-not-found'] = "<div class='error'>User not Found</div>";
                         header('location:'.SITEURL.'admin/manage-admin.php');
