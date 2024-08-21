@@ -2,7 +2,7 @@
     include('partials/menu.php');
 ?>
 
-        <!------menu section start-------->
+        <!------menu section start------>
         <div class="main-content">
             <div class="wrapper">
                 <h1>Manage Admin</h1><br/><br/><br/>
